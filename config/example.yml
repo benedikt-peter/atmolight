@@ -1,0 +1,71 @@
+## List of output devices (LED strips, etc.).
+devices:
+  ## Type can be one of: atmolight, karatelight, dotstar
+#  - type: atmolight
+#    name: Living Room
+#    filename: /dev/ttyUSB0
+  ## When an error occurs, the device can be reset automatically. This can work around issues with unstable output
+  ## devices. The first reset is done after waiting for one second. With every failing reset, the wait time is doubled.
+#    reset_on_error: true
+
+# Optional configuration for the command server. The command server currently supports no authentication and should be
+# localhost only.
+control:
+  address: 127.0.0.1
+  port: 22222
+
+# Optional configuration for the analyzer. The analyzer captures input from a capture device and outputs colors to
+# a predefined number and layout of output channels.
+#analyzer:
+#  capture:
+    ## Type can be one of: opencv
+#    type: opencv
+    ## Either filename or device index has to be specified.
+#    filename: /dev/video0
+    #    index: 0
+    ## Configuration for the channel layout for each side of the image.
+#    top:
+      ## Number of individual channels per side. Determines the width of a segment.
+#      count: 1
+      ## Depth of the analyzed segment in pixels.
+#      depth: 20
+      ## Number of pixels to omit on the outer side of the segment.
+#      crop: 20
+#    bottom:
+      ## Number of individual channels per side. Determines the width of a segment.
+#      count: 1
+      ## Depth of the analyzed segment in pixels.
+#      depth: 20
+      ## Number of pixels to omit on the outer side of the segment.
+#      crop: 20
+#    left:
+      ## Number of individual channels per side. Determines the width of a segment.
+#      count: 1
+      ## Depth of the analyzed segment in pixels.
+#      depth: 20
+      ## Number of pixels to omit on the outer side of the segment.
+#      crop: 0
+#    right:
+      ## Number of individual channels per side. Determines the width of a segment.
+#      count: 1
+      ## Depth of the analyzed segment in pixels.
+#      depth: 20
+      ## Number of pixels to omit on the outer side of the segment.
+#      crop: 0
+  ## Configuration for the mappings from captured channels to device channels.
+#  mappings:
+#    top:
+      ## The device_index is the index into the devices list above, so multiple devices can be used in parallel to
+      ## increase the number of available output channels. device_channel is the channel to output to. The input
+      ## channels are mapped to the output channels in the order they appear in.
+#      - device_index: 0
+#        device_channel: 0
+#    bottom:
+#      - device_index: 0
+#        device_channel: 1
+#    left:
+#      - device_index: 0
+#        device_channel: 2
+#    right:
+#      - device_index: 0
+#        device_channel: 3

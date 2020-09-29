@@ -1,0 +1,2 @@
+add_subdirectory(atmodevice)
+add_subdirectory(atmoanalyzer)

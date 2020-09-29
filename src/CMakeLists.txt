@@ -1,0 +1,4 @@
+add_subdirectory(atmodevice)
+add_subdirectory(atmoanalyzer)
+add_subdirectory(atmoctrl)
+add_subdirectory(atmolight)

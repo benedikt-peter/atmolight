@@ -1,0 +1,9 @@
+[Unit]
+Description=AtmoLight Remote Control Server
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/atmolight -c /etc/atmolight/atmolight.yml
+
+[Install]
+WantedBy=multi-user.target
